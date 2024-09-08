@@ -37,7 +37,6 @@ python3.12 -m venv $VENV_DIR
 source $VENV_DIR/bin/activate
 
 # Install Django and Gunicorn
-pip install psycopg psycopg2-binary django gunicorn
 pip install -r ../requirements.txt
 
 # Configure Django for production
