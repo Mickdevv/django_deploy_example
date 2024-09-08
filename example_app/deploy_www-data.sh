@@ -16,6 +16,7 @@ NGINX_ENABLED="/etc/nginx/sites-enabled/$PROJECT_NAME"
 
 
 echo "h"
+echo $SERVER_IP
 echo $DATABASE_NAME
 echo $DATABASE_USER
 echo $DATABASE_PASSWORD
@@ -192,7 +193,7 @@ sudo  git config --global --add safe.directory $PROJECT_DIR/../
 echo "Deployment completed successfully!"
 # Configure Django for production
 if [ -n "$DOMAIN_NAME" ]; then
-    echo "http://$SERVER_IP"
-else
     echo "https://$DOMAIN_NAME"
+else
+    echo "http://$SERVER_IP"
 fi
