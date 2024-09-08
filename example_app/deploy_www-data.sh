@@ -14,6 +14,13 @@ GUNICORN_SERVICE="/etc/systemd/system/gunicorn.service"
 NGINX_CONFIG="/etc/nginx/sites-available/$PROJECT_NAME"
 NGINX_ENABLED="/etc/nginx/sites-enabled/$PROJECT_NAME"
 
+
+echo "h"
+echo $DATABASE_NAME
+echo $DATABASE_USER
+echo $DATABASE_PASSWORD
+echo "h"
+
 # Update the package list and upgrade all packages
 echo "Updating the package list and upgrading all packages..."
 sudo apt update && sudo apt upgrade -y
