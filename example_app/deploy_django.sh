@@ -35,7 +35,8 @@ sudo apt install -y python3.12 python3.12-venv python3.12-dev libpq-dev nginx cu
 python3.12 -m venv $VENV_DIR
 source $VENV_DIR/bin/activate
 
-# Install Django and Gunicorn
+# Install deployment requirements and any extra project requirements
+pip install psycopg psycopg2-binary django gunicorn python-dotenv
 pip install -r ../requirements.txt
 
 # Configure Django for production
