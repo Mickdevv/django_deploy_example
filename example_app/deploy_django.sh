@@ -38,15 +38,8 @@ source $VENV_DIR/bin/activate
 # Install deployment requirements and any extra project requirements
 pip install psycopg psycopg2-binary django gunicorn python-dotenv
 
-# Create a requirements.txt file if one doesn't already exist, or add the current installed requirements to the current file
-pip freeze >> ../requirements.txt
-
 # install all requirements. 
 pip install -r ../requirements.txt
-
-# Remove potential duplicates by overwriting the requirements file with all currently installed packages
-pip freeze > ../requirements.txt
-
 
 # Configure Django for production
 if [ -n "$DOMAIN_NAME" ]; then
