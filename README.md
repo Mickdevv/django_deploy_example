@@ -9,9 +9,13 @@ Connect to it using SSH
 If you have a domain name, change the A records in its DNS settings to point to the publiv IPV4 address of your instance
 
 Clone this repository into the machine : `git clone https://github.com/Mickdevv/django_deploy_example.git` 
+
 Enter the script's directory : `cd django_deploy_example/example_app/`
+
 Change the permissions of the file to allow for execution : `chmod +x deploy_django.sh`
+
 Now let her rip! : `./deploy_django.sh <optional domain name>`
+
 
 At the end, you should have an output like 
 
