@@ -41,6 +41,8 @@ pip install psycopg psycopg2-binary django gunicorn python-dotenv
 # install all requirements. 
 pip install -r ../requirements.txt
 
+pip freeze > ../requirements.txt
+
 # Configure Django for production
 if [ -n "$DOMAIN_NAME" ]; then
     sed -i "s/ALLOWED_HOSTS = \[\]/ALLOWED_HOSTS = ['$DOMAIN_NAME', '$SERVER_IP']/" $PROJECT_DIR/$PROJECT_NAME/settings.py
