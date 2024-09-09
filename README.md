@@ -1,7 +1,7 @@
 Usage 
 
 I wrote this script to work with AWS EC2 or lightsail, but really it should work with just about any Ubuntu 24 machine with a public IP address (only tested on AWS though so your mileage may vary)
-I wanted it to also create a local postgres database with the credentials stored in the .env file so that if necessary you can have one per machine for testing purposes, but if you have an external db then feel free to comment out the 2 "paragraphs"dedicated to this, and fill out your database details in the .env and settings files 
+I wanted it to also create a local postgres database with the credentials stored in the .env file so that if necessary you can have one per machine for testing purposes, but if you have an external db then feel free to comment out the 2 "paragraphs" dedicated to this, and fill out your database details in the .env file
 
 Create a new EC2 or lightsail instance with Ubuntu Server 24, allowing http and https traffick, and SSH from your IP address
 Connect to it using SSH
