@@ -4,7 +4,6 @@
 ENV_FILE='../.env'
 export $(grep -v '^#' $ENV_FILE | xargs)
 
-
 # Variables
 PROJECT_DIR=$(pwd)
 SERVER_IP=$(curl -s http://checkip.amazonaws.com)  # Automatically fetch the server's public IP
@@ -13,14 +12,6 @@ VENV_DIR="$PROJECT_DIR/../env"
 GUNICORN_SERVICE="/etc/systemd/system/gunicorn.service"
 NGINX_CONFIG="/etc/nginx/sites-available/$PROJECT_NAME"
 NGINX_ENABLED="/etc/nginx/sites-enabled/$PROJECT_NAME"
-
-
-echo "h"
-echo $SERVER_IP
-echo $DATABASE_NAME
-echo $DATABASE_USER
-echo $DATABASE_PASSWORD
-echo "h"
 
 # Update the package list and upgrade all packages
 echo "Updating the package list and upgrading all packages..."
@@ -37,7 +28,7 @@ echo "Adding the deadsnakes PPA for newer Python versions..."
 sudo add-apt-repository ppa:deadsnakes/ppa -y
 sudo apt update
 
-# Install necessary packages
+# Install necessary packages (I am specifically using python3.12 here but you can change this to any version you want)
 sudo apt install -y python3.12 python3.12-venv python3.12-dev libpq-dev nginx curl
 
 # Set up virtual environment
@@ -119,7 +110,7 @@ sudo usermod -aG www-data ubuntu
 # give www-data permissions and ownership of the project directory
 sudo chown -R www-data:www-data $PROJECT_DIR/../
 sudo chmod -R 755 $PROJECT_DIR/../../
-chmod 400 $ENV_FILE
+sudo chmod 400 $ENV_FILE
 
 
 # Start and enable Gunicorn
