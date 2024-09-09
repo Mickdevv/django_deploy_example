@@ -119,7 +119,7 @@ sudo usermod -aG www-data ubuntu
 # give www-data permissions and ownership of the project directory
 sudo chown -R www-data:www-data $PROJECT_DIR/../
 sudo chmod -R 755 $PROJECT_DIR/../../
-chmod 400 $ENV_FILE
+sudo chmod 400 $ENV_FILE
 
 
 # Start and enable Gunicorn
